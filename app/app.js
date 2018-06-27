@@ -32,5 +32,12 @@ angular.module('myApp', [
       templateUrl: 'PokemonDetail/PokemonDetailEdit.html',
       controller: function () {
       }
-    });
+    })
+    .state({
+      name: 'myaccount',
+      url: '/myaccount',
+      templateUrl: 'MyAccount/myAccount.html',
+      controller: 'MyAccountCtrl as vm'
+    })
+  ;
 });

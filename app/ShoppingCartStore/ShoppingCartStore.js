@@ -2,7 +2,7 @@
 
 angular
   .module('myApp')
-  .factory('ShoppingCartStore', function () {
+  .factory('ShoppingCartStore', function (FormDataStore) {
 
     const state = {
       cartItems: {}

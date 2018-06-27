@@ -2,8 +2,5 @@
 angular
   .module('myApp')
   .component('mainMenu', {
-    templateUrl: 'MainMenu/mainMenu.html',
-    controller: function() {
-
-    }
+    templateUrl: 'MainMenu/mainMenu.html'
   });

@@ -1,0 +1,34 @@
+<form class="col-lg-4" name="vm.accountForm" novalidate>
+  
+  <div class="form-group">
+    <label for="exampleInputName">Name</label>
+    <input type="text" class="form-control" id="exampleInputName" placeholder="Name" ng-model="vm.account.name" name="name">
+    <div
+      ng-messages="vm.accountForm.name.$error"
+      ng-if="vm.accountForm.name.$dirty">
+      <p ng-message="required" class="has-error text-danger">Input name</p>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model="vm.account.mail" required name="mail">
+    <div
+      ng-messages="vm.accountForm.mail.$error"
+      ng-if="vm.accountForm.mail.$dirty">
+      <p ng-message="required" class="has-error text-danger">Input Email</p>
+      <p ng-message="email" class="has-error text-danger">Invalid Email format</p>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPhone">Phone</label>
+    <input type="tel" class="form-control" id="exampleInputPhone" placeholder="Phone" ng-model="vm.account.phone" ng-pattern="/^\+?(\d){7,}$/" name="phone">
+    <div
+      ng-messages="vm.accountForm.phone.$error"
+      ng-if="vm.accountForm.phone.$dirty">
+      <p ng-message="pattern" class="has-error text-danger">Invalid phone format</p>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="vm.accountForm.$invalid" ng-click="vm.updateAccount(vm.account)">Submit</button>
+</form>
